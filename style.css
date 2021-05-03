@@ -1,0 +1,217 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	--bg: #f5f6f7;
+	--color-text: #9c9c9c;
+	--color-orange: #ff6a00;
+	--color-shadow: -4px -2px 4px 0px #ffffff, 4px 2px 6px 0px #dfe4ea;
+	--color-equal-shadow: -2px -2px 6px rgba(3, 169, 244, 0.01),
+		2px 2px 6px rgba(0, 0, 0, 0.3);
+	--color-inset-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.8),
+		inset 2px 2px 6px rgba(0, 0, 0, 0.1);
+	--color-equal-inset-shadow: inset -2px -2px 6px rgba(255, 106, 0, 0.5),
+		inset 2px 2px 6px rgba(0, 0, 0, 0.3);
+}
+html[data-theme="dark"] {
+	--bg: #131419;
+	--color-text: #ffffff;
+	--color-orange: #ff6a00;
+	--color-shadow: -3px -3px 10px rgba(255, 255, 255, 0.05),
+		3px 3px 15px rgba(0, 0, 0, 0.5);
+	--color-inset-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.01),
+		inset 2px 2px 6px rgba(0, 0, 0, 0.8);
+	--color-equal-shadow: -2px -2px 6px rgba(3, 169, 244, 0.01),
+		2px 2px 6px rgba(0, 0, 0, 0.8);
+	--color-equal-inset-shadow: inset -2px -2px 6px rgba(255, 106, 0, 0.2),
+		inset 2px 2px 6px rgba(0, 0, 0, 0.5);
+}
+body {
+	background: var(--bg);
+	/* display: flex;
+	justify-content: center; */
+	align-items: center;
+	font-family: "Poppins", sans-serif;
+}
+
+.calculator {
+	/* display: flex; */
+	/* flex-direction: column; */
+	width: 300px;
+	height: 560px;
+	/* position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%); */
+	margin: 80px auto;
+	border-radius: 10px;
+	/* align-items: center; */
+	background: var(--bg);
+	box-shadow: var(--color-shadow);
+	/* padding: 100px; */
+}
+
+.heading {
+	height: 60px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 28px;
+	position: relative;
+}
+.heading h1 {
+	color: var(--color-text);
+	font-size: 18px;
+	font-weight: 300;
+	margin: 5px 0 0 0;
+}
+
+.heading span:nth-child(1),
+.heading span:nth-child(3) {
+	cursor: pointer;
+	font-size: 15px;
+	color: var(--color-text);
+}
+
+.heading h1::after {
+	width: 100px;
+	content: "";
+	position: absolute;
+	bottom: -5%;
+	border-bottom: 3px solid var(--color-orange);
+	z-index: 100;
+	left: 30%;
+	border-radius: 15px;
+}
+
+.screen {
+	height: 30%;
+	background: var(--bg);
+	position: relative;
+	border-top: 3px solid rgba(0, 0, 0, 0.05);
+	border-bottom: 3px solid rgba(0, 0, 0, 0.05);
+}
+
+.upper-value {
+	/* background-color: aqua; */
+	text-align: left;
+	/* height: 10px; */
+	position: absolute;
+	bottom: 30%;
+	right: 5%;
+	color: var(--color-text);
+	font-size: 32px;
+}
+.lower-value {
+	position: absolute;
+	bottom: 2%;
+	right: 5%;
+	font-size: 32px;
+	color: var(--color-text);
+}
+
+.keypad {
+	padding: 30px 20px;
+}
+
+.operator,
+.number {
+	width: 45px;
+	height: 45px;
+	border-radius: 50%;
+	border: none;
+	background-color: var(--bg);
+	box-shadow: var(--color-shadow);
+	cursor: pointer;
+	/* font-weight: 500; */
+}
+.group {
+	width: 185px;
+	float: left;
+}
+
+.top-section {
+	height: auto;
+	position: relative;
+	display: flex;
+	justify-content: space-around;
+	padding: 4px 6px;
+	border-radius: 30px;
+	margin-left: 10px;
+	background: var(--bg);
+	box-shadow: var(--color-shadow);
+}
+.top-section button {
+	/* font-weight: bolder; */
+	color: var(--color-orange);
+	margin-top: 2px;
+}
+
+.middle-section {
+	height: auto;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 2px;
+	margin-left: 10.4px;
+}
+.middle-section button {
+	font-weight: 600;
+	color: var(--color-text);
+	margin: 3px 5px;
+}
+
+.side-section {
+	float: left;
+	height: 254px;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 5px 4px;
+	border-radius: 30px;
+	background-color: var(--bg);
+	margin-left: 10px;
+	box-shadow: var(--color-shadow);
+}
+
+.side-section button {
+	font-weight: 600;
+	color: var(--color-orange);
+	margin-left: 2px;
+}
+button.equal {
+	background-color: var(--color-orange);
+	color: #fff;
+	box-shadow: var(--color-equal-shadow);
+}
+
+.operator:active,
+.number:active,
+.operator:hover,
+.number:hover {
+	box-shadow: var(--color-inset-shadow);
+}
+
+button.equal:active,
+button.equal:hover {
+	background: var(--color-orange);
+	box-shadow: var(--color-equal-inset-shadow);
+}
+
+button {
+	outline: none;
+}
+
+label input[type="checkbox"] {
+	-webkit-appearance: none;
+}
+label input[type="checkbox"]:checked ~ .fas {
+	color: var(--color-orange);
+}
+.fas.fa-moon:hover {
+	cursor: pointer;
+}
