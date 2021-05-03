@@ -37,8 +37,8 @@ for (let i = 0; i < operator.length; i++) {
 				lowerValue.innerText.length - 1
 			);
 		} else if (e.target.innerText == "=") {
-			const leftPart = parseInt(upperValue.innerText);
-			const rightPart = parseInt(lowerValue.innerText);
+			const leftPart = parseFloat(upperValue.innerText);
+			const rightPart = parseFloat(lowerValue.innerText);
 			const operator = upperValue.innerText.slice(
 				-1,
 				upperValue.innerText.length
