@@ -62,13 +62,17 @@ for (let i = 0; i < operator.length; i++) {
 				lowerValue.innerText = `${power(leftPart, rightPart)}`;
 			}
 		} else if (e.target.innerText == "sqrt") {
-			lowerValue.innerText = `${sqrt(parseFloat(lowerValue.innerText))}`;
+			if (lowerValue.innerText)
+				lowerValue.innerText = `${sqrt(parseFloat(lowerValue.innerText))}`;
 		} else if (e.target.innerText == "log2") {
-			lowerValue.innerText = `${logbase2(parseFloat(lowerValue.innerText))}`;
+			if (lowerValue.innerText)
+				lowerValue.innerText = `${logbase2(parseFloat(lowerValue.innerText))}`;
 		} else if (e.target.innerText == "logE") {
-			lowerValue.innerText = `${logbaseE(parseFloat(lowerValue.innerText))}`;
+			if (lowerValue.innerText)
+				lowerValue.innerText = `${logbaseE(parseFloat(lowerValue.innerText))}`;
 		} else if (e.target.innerText == "log10") {
-			lowerValue.innerText = `${logbase10(parseFloat(lowerValue.innerText))}`;
+			if (lowerValue.innerText)
+				lowerValue.innerText = `${logbase10(parseFloat(lowerValue.innerText))}`;
 		} else if (e.target.innerText == "pow") {
 			upperValue.innerText = lowerValue.innerText;
 			lowerValue.innerText = "";
