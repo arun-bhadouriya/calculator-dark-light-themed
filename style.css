@@ -34,16 +34,22 @@ body {
 	justify-content: center; */
 	align-items: center;
 	font-family: "Poppins", sans-serif;
+	overflow: hidden;
+	/*  */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: auto;
 }
 
 .expand {
 	/* background: var(--color-orange); */
 	height: 550px;
-	position: absolute;
+	/* position: absolute; */
 	width: 163px;
-	left: 350px;
-	top: 87px;
-	right: 826px;
+	/* left: 350px; */
+	/* top: 87px; */
+	/* right: 826px; */
 	/* z-index: 010000; */
 	border-radius: 8px;
 	box-shadow: var(--color-equal-shadow);
@@ -78,13 +84,13 @@ body > div > div.expand.show > div.record > span.query > span {
 .calculator {
 	/* display: flex; */
 	/* flex-direction: column; */
-	width: 300px;
+	width: 355px;
 	height: 560px;
 	/* position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%); */
-	margin: 80px auto;
+	margin: 80px 5px;
 	border-radius: 10px;
 	/* align-items: center; */
 	background: var(--bg);
