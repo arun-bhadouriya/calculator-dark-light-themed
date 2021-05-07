@@ -54,11 +54,15 @@ for (let i = 0; i < operator.length; i++) {
 				upperValue.innerText.length
 			);
 			//evalute the result and update helper function
-
-			if (operator) {
+			console.log(operator);
+			if (
+				operator == "+" ||
+				operator == "-" ||
+				operator == "*" ||
+				operator == "/"
+			) {
 				evaluate(leftPart, rightPart, operator);
-			}
-			if (typeof parseInt(operator) == "number") {
+			} else {
 				lowerValue.innerText = `${power(leftPart, rightPart)}`;
 			}
 		} else if (e.target.innerText == "sqrt") {
